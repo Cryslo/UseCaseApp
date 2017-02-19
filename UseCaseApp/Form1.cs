@@ -13,12 +13,10 @@ namespace UseCaseApp
     public partial class Form1 : Form
     {
         List<UsecaseActor> actorList = new List<UsecaseActor>();
-        private int clickcount = 0;
-        private bool p1v;
-        private bool p2v;
-        private bool p3v;
+        List<UsecaseOval> usecastList = new List<UsecaseOval>();
         private PictureBox selectedActor;
         private int selectedActorNum;
+        UsecaseProperties usecasepropForm = new UsecaseProperties();
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +25,10 @@ namespace UseCaseApp
             actorList.Add(new UsecaseActor(pictureBox3));
         }
 
+        private bool p1v;
+        private bool p2v;
+        private bool p3v;
+        private int clickcount = 0;
         private void gfxPanel_MouseClick(object sender, MouseEventArgs e)
         {
             p1v = pictureBox1.Visible;
@@ -84,15 +86,31 @@ namespace UseCaseApp
             {
                 if (editRB.Checked)
                 {
+                    usecasepropForm.Show();
                     int sizex = 100;
                     int sizey = 50;
                     Rectangle rect = new Rectangle(e.X - (sizex/2), e.Y - (sizey/2), sizex, sizey);
-                    UsecaseOval newoval = new UsecaseOval(rect, gfxPanel);
-                    
+                    usecastList.Add(new UsecaseOval(rect, gfxPanel, 
+                        usecasepropForm.getNaam(),
+                        usecasepropForm.getSamenvatting(),
+                        usecasepropForm.getActoren(),
+                        usecasepropForm.getAannamen(),
+                        usecasepropForm.getBescrijving(),
+                        usecasepropForm.getUitzonderingen(),
+                        usecasepropForm.getResultaat()));
+                }
+                if (selectRB.Checked)
+                {
+                    foreach (UsecaseOval item in usecastList)
+                    {
+                        if (item.Rect.Contains(e.Location))
+                        {
+
+                        }
+                    }
                 }
             }
         }
-
         private void changeVisibility(PictureBox pbtemp, TextBox txtboxtemp)
         {
             p1v = pictureBox1.Visible;

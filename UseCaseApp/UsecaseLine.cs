@@ -17,10 +17,9 @@ namespace UseCaseApp
         public UsecaseLine(Point startLoc, Point endLoc, Panel gfxPanel)
         {
             this.startLoc = startLoc;
-            Console.WriteLine(startLoc);
             this.endLoc = endLoc;
-            Console.WriteLine(endLoc);
             this.gfxPanel = gfxPanel;
+
             Graphics GFX = gfxPanel.CreateGraphics();
             Pen tempPen = new Pen(Color.Black);
             GFX.DrawLine(tempPen, startLoc, endLoc);
