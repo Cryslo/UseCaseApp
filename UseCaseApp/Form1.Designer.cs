@@ -144,7 +144,7 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Tag = "Actor3";
             this.pictureBox3.Visible = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseClick);
             // 
             // pictureBox2
             // 
@@ -157,7 +157,7 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Tag = "Actor2";
             this.pictureBox2.Visible = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseClick);
             // 
             // pictureBox1
             // 
@@ -170,7 +170,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "Actor1";
             this.pictureBox1.Visible = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // groupBox1
             // 

@@ -1,24 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UseCaseApp
 {
     class UsecaseLine
     {
-        private int locX;
-        private int locY;
-        private int locX2;
-        private int locY2;
+        Point startLoc;
+        Point endLoc;
+        Panel gfxPanel;
 
-        public UsecaseLine(int locX, int locY, int locX2, int locY2)
+        public UsecaseLine(Point startLoc, Point endLoc, Panel gfxPanel)
         {
-            this.locX = locX;
-            this.locY = locY;
-            this.locX2 = locX2;
-            this.locY2 = locY2;
+            this.startLoc = startLoc;
+            Console.WriteLine(startLoc);
+            this.endLoc = endLoc;
+            Console.WriteLine(endLoc);
+            this.gfxPanel = gfxPanel;
+            Graphics GFX = gfxPanel.CreateGraphics();
+            Pen tempPen = new Pen(Color.Black);
+            GFX.DrawLine(tempPen, startLoc, endLoc);
         }
     }
 }

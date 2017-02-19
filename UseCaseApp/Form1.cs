@@ -17,16 +17,18 @@ namespace UseCaseApp
         private bool p1v;
         private bool p2v;
         private bool p3v;
+        private PictureBox selectedActor;
+        private int selectedActorNum;
         public Form1()
         {
             InitializeComponent();
+            actorList.Add(new UsecaseActor(pictureBox1));
+            actorList.Add(new UsecaseActor(pictureBox2));
+            actorList.Add(new UsecaseActor(pictureBox3));
         }
 
-        int tempclickX = 0;
-        int tempclickY = 0;
         private void gfxPanel_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("sad");
             p1v = pictureBox1.Visible;
             p2v = pictureBox2.Visible;
             p3v = pictureBox3.Visible;
@@ -63,53 +65,31 @@ namespace UseCaseApp
             }
             if (LineRadioButton.Checked)
             {
-                if (selectRB.Checked)
+                if (editRB.Checked)
                 {
-                    clickcount += 1;
                     if (clickcount == 1)
                     {
-                        tempclickX = e.X;
-                        tempclickY = e.Y;
+                        clickcount += 1;
                     }
                     if (clickcount == 2)
                     {
-                        UsecaseLine line = new UsecaseLine(e.X, e.Y, tempclickX, tempclickY);
                         ActorRadioButton.Checked = false;
                         UsecaseRadioButton.Checked = false;
-                        Graphics GFX = gfxPanel.CreateGraphics();
-                        Pen tempPen = new Pen(Color.Black);
-                        GFX.DrawLine(tempPen, new Point(e.X, e.Y), new Point(tempclickX, tempclickY));
+                        actorList[1].createLine(new Point(e.X, e.Y), new Point(tempclickX, tempclickY), gfxPanel);
                         clickcount = 0;
                     }
                 }
             }
             if (UsecaseRadioButton.Checked)
             {
-
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (editRB.Checked)
-            {
-                changeVisibility(pictureBox1, Actor1text);
-            }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (editRB.Checked)
-            {
-                changeVisibility(pictureBox2, Actor2text);
-            }
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (editRB.Checked)
-            {
-                changeVisibility(pictureBox3, Actor3text);
+                if (editRB.Checked)
+                {
+                    int sizex = 100;
+                    int sizey = 50;
+                    Rectangle rect = new Rectangle(e.X - (sizex/2), e.Y - (sizey/2), sizex, sizey);
+                    UsecaseOval newoval = new UsecaseOval(rect, gfxPanel);
+                    
+                }
             }
         }
 
@@ -140,6 +120,86 @@ namespace UseCaseApp
         private void selectRB_MouseClick(object sender, MouseEventArgs e)
         {
             editRB.Checked = false;
+        }
+
+        int tempclickX = 0;
+        int tempclickY = 0;
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (editRB.Checked && ActorRadioButton.Checked)
+            {
+                changeVisibility(pictureBox1, Actor1text);
+            }
+            if (editRB.Checked && LineRadioButton.Checked)
+            {
+                clickcount += 1;
+                if (clickcount == 1)
+                {
+                    selectedActor = pictureBox1;
+                    selectedActorNum = 1;
+                    tempclickX = selectedActor.Location.X + (selectedActor.Width/2);
+                    tempclickY = selectedActor.Location.Y + (selectedActor.Height/2);
+                }
+                if (clickcount == 2)
+                {
+                    ActorRadioButton.Checked = false;
+                    UsecaseRadioButton.Checked = false;
+                    actorList[1].createLine(new Point(e.X, e.Y), new Point(e.X, e.Y), gfxPanel);
+                    clickcount = 0;
+                }
+            }
+        }
+
+        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (editRB.Checked && ActorRadioButton.Checked)
+            {
+                changeVisibility(pictureBox2, Actor2text);
+            }
+            if (editRB.Checked && LineRadioButton.Checked)
+            {
+                clickcount += 1;
+                if (clickcount == 1)
+                {
+                    selectedActor = pictureBox2;
+                    selectedActorNum = 2;
+                    tempclickX = selectedActor.Location.X + (selectedActor.Width / 2);
+                    tempclickY = selectedActor.Location.Y + (selectedActor.Height/2);
+                }
+                if (clickcount == 2)
+                {
+                    ActorRadioButton.Checked = false;
+                    UsecaseRadioButton.Checked = false;
+                    actorList[2].createLine(selectedActor.Location, new Point(e.X, e.Y), gfxPanel);
+                    clickcount = 0;
+                }
+            }
+        }
+
+        private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (editRB.Checked && ActorRadioButton.Checked)
+            {
+                changeVisibility(pictureBox3, Actor3text);
+            }
+            if (editRB.Checked && LineRadioButton.Checked)
+            {
+                clickcount += 1;
+                if (clickcount == 1)
+                {
+                    selectedActor = pictureBox3;
+                    selectedActorNum = 3;
+                    tempclickX = selectedActor.Location.X + (selectedActor.Width / 2);
+                    tempclickY = selectedActor.Location.Y + (selectedActor.Height/2);
+                }
+                if (clickcount == 2)
+                {
+                    ActorRadioButton.Checked = false;
+                    UsecaseRadioButton.Checked = false;
+                    actorList[3].createLine(selectedActor.Location, new Point(e.X, e.Y), gfxPanel);
+                    clickcount = 0;
+                }
+            }
         }
     }
 }
