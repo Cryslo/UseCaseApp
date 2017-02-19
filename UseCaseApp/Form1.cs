@@ -8,6 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*To-Do
+ * Add a small square or elipse to a lines middle to make it targetable for deletion.
+ * Prompt for user input with usecases before continuing
+ * */
+
+
+
+
+
 namespace UseCaseApp
 {
     public partial class Form1 : Form
