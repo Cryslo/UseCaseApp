@@ -106,6 +106,7 @@
             this.gfxPanel.Name = "gfxPanel";
             this.gfxPanel.Size = new System.Drawing.Size(919, 379);
             this.gfxPanel.TabIndex = 5;
+            this.gfxPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gfxPanel_Paint);
             this.gfxPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gfxPanel_MouseClick);
             // 
             // Actor3text

@@ -31,15 +31,27 @@ namespace UseCaseApp
             }
         }
 
+        internal List<UsecaseLine> LineList
+        {
+            get
+            {
+                return lineList;
+            }
+
+            set
+            {
+                lineList = value;
+            }
+        }
+
         public void createLine(Point lineStart, Point lineEnd, Panel gfxPanel)
         {
-            lineList.Add(new UsecaseLine(lineStart, lineEnd, gfxPanel));
+            LineList.Add(new UsecaseLine(lineStart, lineEnd, gfxPanel));
         }
 
         public void clearLines()
         {
-            
-            lineList = new List<UsecaseLine>();
+            LineList = new List<UsecaseLine>();
         }
         
     }

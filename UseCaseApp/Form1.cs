@@ -90,6 +90,21 @@ namespace UseCaseApp
                         clickcount = 0;
                     }
                 }
+                if (selectRB.Checked)
+                {
+                    foreach (UsecaseActor item in actorList)
+                    {
+                        foreach (UsecaseLine item2 in item.LineList)
+                        {
+                            if (item2.targetRect.Contains(new Point(e.X,e.Y)))
+                            {
+                                item.LineList.Remove(item2);
+                                gfxPanel.Invalidate();
+                                return;
+                            }
+                        }
+                    }
+                }
             }
             if (UsecaseRadioButton.Checked)
             {
@@ -116,6 +131,18 @@ namespace UseCaseApp
 
                         }
                     }
+
+                }
+            }
+        }
+
+        private void redrawCanvas()
+        {
+            foreach (UsecaseActor item in actorList)
+            {
+                foreach (UsecaseLine item2 in item.LineList)
+                {
+                    item2.reDraw();
                 }
             }
         }
@@ -251,6 +278,12 @@ namespace UseCaseApp
             changeVisibility(pictureBox1, Actor1text);
             changeVisibility(pictureBox2, Actor2text);
             changeVisibility(pictureBox3, Actor3text);
+        }
+
+        private void gfxPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+            redrawCanvas();
         }
     }
 }
