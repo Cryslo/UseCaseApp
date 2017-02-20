@@ -145,6 +145,10 @@ namespace UseCaseApp
                     item2.reDraw();
                 }
             }
+            foreach (UsecaseOval item in usecastList)
+            {
+                item.reDraw();
+            }
         }
         private void changeVisibility(PictureBox pbtemp, TextBox txtboxtemp)
         {

@@ -19,6 +19,7 @@ namespace UseCaseApp
         private string beschrijving;
         private string uitzonderingen;
         private string resultaat;
+        Pen tempPen = new Pen(Color.Black);
 
         public Rectangle Rect
         {
@@ -46,9 +47,15 @@ namespace UseCaseApp
             this.resultaat = resultaat;
 
             Graphics GFX = gfxPanel.CreateGraphics();
-            Pen tempPen = new Pen(Color.Black);
             GFX.DrawEllipse(tempPen, rect);
+            GFX.Dispose();
         }
-
+        
+        public void reDraw()
+        {
+            Graphics GFX = gfxPanel.CreateGraphics();
+            GFX.DrawEllipse(tempPen, rect);
+            GFX.Dispose();
+        }
     }
 }

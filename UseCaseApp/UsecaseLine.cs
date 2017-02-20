@@ -43,6 +43,7 @@ namespace UseCaseApp
             PointF rectloc = Fraction(0.5f);
             targetRect = new Rectangle(Convert.ToInt32(rectloc.X), Convert.ToInt32(rectloc.Y), 10, 10);
             GFX.DrawRectangle(tempPen, targetRect);
+            GFX.Dispose();
         }
 
         public PointF Fraction(float frac)
@@ -63,6 +64,7 @@ namespace UseCaseApp
             PointF rectloc = Fraction(0.5f);
             targetRect = new Rectangle(Convert.ToInt32(rectloc.X), Convert.ToInt32(rectloc.Y), 10, 10);
             GFX.DrawRectangle(tempPen, targetRect);
+            GFX.Dispose();
         }
     }
 }
