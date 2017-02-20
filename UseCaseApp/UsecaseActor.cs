@@ -35,6 +35,12 @@ namespace UseCaseApp
         {
             lineList.Add(new UsecaseLine(lineStart, lineEnd, gfxPanel));
         }
+
+        public void clearLines()
+        {
+            
+            lineList = new List<UsecaseLine>();
+        }
         
     }
 }

@@ -43,6 +43,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.selectRB = new System.Windows.Forms.RadioButton();
             this.editRB = new System.Windows.Forms.RadioButton();
+            this.clearCanvas = new System.Windows.Forms.Button();
             this.gfxPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -79,6 +80,7 @@
             this.UsecaseRadioButton.TabIndex = 3;
             this.UsecaseRadioButton.Text = "Use Case";
             this.UsecaseRadioButton.UseVisualStyleBackColor = true;
+            this.UsecaseRadioButton.CheckedChanged += new System.EventHandler(this.UsecaseRadioButton_CheckedChanged);
             // 
             // LineRadioButton
             // 
@@ -219,11 +221,22 @@
             this.editRB.UseVisualStyleBackColor = true;
             this.editRB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.editRB_MouseClick);
             // 
+            // clearCanvas
+            // 
+            this.clearCanvas.Location = new System.Drawing.Point(856, 12);
+            this.clearCanvas.Name = "clearCanvas";
+            this.clearCanvas.Size = new System.Drawing.Size(75, 23);
+            this.clearCanvas.TabIndex = 8;
+            this.clearCanvas.Text = "Clear";
+            this.clearCanvas.UseVisualStyleBackColor = true;
+            this.clearCanvas.Click += new System.EventHandler(this.clearCanvas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 509);
+            this.Controls.Add(this.clearCanvas);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gfxPanel);
@@ -261,6 +274,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton selectRB;
         private System.Windows.Forms.RadioButton editRB;
+        private System.Windows.Forms.Button clearCanvas;
     }
 }
 

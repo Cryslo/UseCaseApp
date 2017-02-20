@@ -95,7 +95,6 @@ namespace UseCaseApp
             {
                 if (editRB.Checked)
                 {
-                    usecasepropForm.Show();
                     int sizex = 100;
                     int sizey = 50;
                     Rectangle rect = new Rectangle(e.X - (sizex/2), e.Y - (sizey/2), sizex, sizey);
@@ -227,6 +226,31 @@ namespace UseCaseApp
                     clickcount = 0;
                 }
             }
+        }
+
+        private void UsecaseRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UsecaseRadioButton.Checked)
+            {
+                usecasepropForm.Show();
+            }
+            else if (!UsecaseRadioButton.Checked)
+            {
+                usecasepropForm.Hide();
+            }
+        }
+
+        private void clearCanvas_Click(object sender, EventArgs e)
+        {
+            foreach (UsecaseActor item in actorList)
+            {
+                item.clearLines();
+                gfxPanel.Invalidate();
+            }
+
+            changeVisibility(pictureBox1, Actor1text);
+            changeVisibility(pictureBox2, Actor2text);
+            changeVisibility(pictureBox3, Actor3text);
         }
     }
 }
