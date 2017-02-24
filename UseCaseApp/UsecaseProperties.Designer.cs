@@ -43,6 +43,7 @@
             this.ucfUitzonderingTxt = new System.Windows.Forms.TextBox();
             this.ucfResultaatTxt = new System.Windows.Forms.TextBox();
             this.updateUsecase = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -161,13 +162,22 @@
             // 
             // updateUsecase
             // 
-            this.updateUsecase.Location = new System.Drawing.Point(338, 431);
+            this.updateUsecase.Location = new System.Drawing.Point(341, 422);
             this.updateUsecase.Name = "updateUsecase";
             this.updateUsecase.Size = new System.Drawing.Size(148, 35);
             this.updateUsecase.TabIndex = 14;
-            this.updateUsecase.Text = "Update Usecase";
+            this.updateUsecase.Text = "Update selected usecase";
             this.updateUsecase.UseVisualStyleBackColor = true;
             this.updateUsecase.Click += new System.EventHandler(this.updateUsecase_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(2, 462);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(377, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "When everything is filled out, Click on the main windows to create the usecase";
             // 
             // UsecaseProperties
             // 
@@ -175,6 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 478);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.updateUsecase);
             this.Controls.Add(this.ucfResultaatTxt);
             this.Controls.Add(this.ucfUitzonderingTxt);
@@ -214,5 +225,6 @@
         private System.Windows.Forms.TextBox ucfUitzonderingTxt;
         private System.Windows.Forms.TextBox ucfResultaatTxt;
         private System.Windows.Forms.Button updateUsecase;
+        private System.Windows.Forms.Label label8;
     }
 }

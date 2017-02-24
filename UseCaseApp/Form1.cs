@@ -8,11 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*To-Do
- * Add a small square or elipse to a lines middle to make it targetable for deletion.
- * Prompt for user input with usecases before continuing
- * */
-
 
 
 
@@ -72,10 +67,6 @@ namespace UseCaseApp
                             Actor3text.Visible = true;
                         }
                     }
-                }
-                else if (selectRB.Checked)
-                {
-
                 }
             }
             if (LineRadioButton.Checked)
@@ -237,6 +228,10 @@ namespace UseCaseApp
                     clickcount = 0;
                 }
             }
+            else if (selectRB.Checked && ActorRadioButton.Checked)
+            {
+                selectedActor = pictureBox1;
+            }
         }
 
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
@@ -262,6 +257,10 @@ namespace UseCaseApp
                     clickcount = 0;
                 }
             }
+            else if (selectRB.Checked && ActorRadioButton.Checked)
+            {
+                selectedActor = pictureBox2;
+            }
         }
 
         private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
@@ -286,6 +285,10 @@ namespace UseCaseApp
                     actorList[3].createLine(selectedActor.Location, new Point(e.X, e.Y), gfxPanel);
                     clickcount = 0;
                 }
+            }
+            else if (selectRB.Checked && ActorRadioButton.Checked)
+            {
+                selectedActor = pictureBox3;
             }
         }
 

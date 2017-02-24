@@ -43,6 +43,8 @@ namespace UseCaseApp
             PointF rectloc = Fraction(0.5f);
             targetRect = new Rectangle(Convert.ToInt32(rectloc.X), Convert.ToInt32(rectloc.Y), 10, 10);
             GFX.DrawRectangle(tempPen, targetRect);
+            GFX.DrawLine(tempPen, new Point(targetRect.X, targetRect.Y), new Point(targetRect.X + targetRect.Width, targetRect.Y + targetRect.Height));
+            GFX.DrawLine(tempPen, new Point(targetRect.X + targetRect.Width, targetRect.Y), new Point(targetRect.X, targetRect.Y + targetRect.Height));
             GFX.Dispose();
         }
 

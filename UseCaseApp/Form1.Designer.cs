@@ -109,6 +109,7 @@
             this.Actor3text.Size = new System.Drawing.Size(73, 20);
             this.Actor3text.TabIndex = 5;
             this.Actor3text.Tag = "Actor3";
+            this.Actor3text.Text = "Name";
             this.Actor3text.Visible = false;
             // 
             // Actor2text
@@ -118,6 +119,7 @@
             this.Actor2text.Size = new System.Drawing.Size(72, 20);
             this.Actor2text.TabIndex = 4;
             this.Actor2text.Tag = "Actor2";
+            this.Actor2text.Text = "Name";
             this.Actor2text.Visible = false;
             // 
             // Actor1text
@@ -127,6 +129,7 @@
             this.Actor1text.Size = new System.Drawing.Size(72, 20);
             this.Actor1text.TabIndex = 3;
             this.Actor1text.Tag = "Actor1";
+            this.Actor1text.Text = "Name";
             this.Actor1text.Visible = false;
             // 
             // pictureBox3
@@ -217,21 +220,21 @@
             // 
             // clearCanvas
             // 
-            this.clearCanvas.Location = new System.Drawing.Point(856, 12);
+            this.clearCanvas.Location = new System.Drawing.Point(795, 12);
             this.clearCanvas.Name = "clearCanvas";
-            this.clearCanvas.Size = new System.Drawing.Size(75, 23);
+            this.clearCanvas.Size = new System.Drawing.Size(136, 23);
             this.clearCanvas.TabIndex = 8;
-            this.clearCanvas.Text = "Clear";
+            this.clearCanvas.Text = "Clear canvas";
             this.clearCanvas.UseVisualStyleBackColor = true;
             this.clearCanvas.Click += new System.EventHandler(this.clearCanvas_Click);
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(856, 41);
+            this.deleteBtn.Location = new System.Drawing.Point(795, 41);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(136, 23);
             this.deleteBtn.TabIndex = 9;
-            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.Text = "Delete selected usecase";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
