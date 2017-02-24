@@ -19,7 +19,9 @@ namespace UseCaseApp
         private string beschrijving;
         private string uitzonderingen;
         private string resultaat;
+
         Pen tempPen = new Pen(Color.Black);
+        Label textlabel;
 
         public Rectangle Rect
         {
@@ -27,16 +29,113 @@ namespace UseCaseApp
             {
                 return rect;
             }
+        }
+
+        public string Naam
+        {
+            get
+            {
+                return naam;
+            }
+            set
+            {
+                naam = value;
+            }
+        }
+
+        public string Samenvatting
+        {
+            get
+            {
+                return samenvatting;
+            }
+            set
+            {
+                samenvatting = value;
+            }
+        }
+
+        public string Actoren
+        {
+            get
+            {
+                return actoren;
+            }
 
             set
             {
-                rect = value;
+                actoren = value;
+            }
+        }
+
+        public string Aannamen
+        {
+            get
+            {
+                return aannamen;
+            }
+
+            set
+            {
+                aannamen = value;
+            }
+        }
+
+        public string Beschrijving
+        {
+            get
+            {
+                return beschrijving;
+            }
+
+            set
+            {
+                beschrijving = value;
+            }
+        }
+
+        public string Uitzonderingen
+        {
+            get
+            {
+                return uitzonderingen;
+            }
+
+            set
+            {
+                uitzonderingen = value;
+            }
+        }
+
+        public string Resultaat
+        {
+            get
+            {
+                return resultaat;
+            }
+
+            set
+            {
+                resultaat = value;
+            }
+        }
+
+        public Label Textlabel
+        {
+            get
+            {
+                return textlabel;
+            }
+
+            set
+            {
+                textlabel = value;
             }
         }
 
         public UsecaseOval(Rectangle rect, Panel gfxPanel, string naam, string samenvatting, string actoren, string aannamen, string beschrijving, string uitzonderingen, string resultaat)
         {
-            this.Rect = rect;
+            this.rect = rect;
             this.gfxPanel = gfxPanel;
             this.naam = naam;
             this.samenvatting = samenvatting;
@@ -46,13 +145,22 @@ namespace UseCaseApp
             this.uitzonderingen = uitzonderingen;
             this.resultaat = resultaat;
 
-            Graphics GFX = gfxPanel.CreateGraphics();
-            GFX.DrawEllipse(tempPen, rect);
+
+            Graphics GFX = this.gfxPanel.CreateGraphics();
+            textlabel = new Label();
+            this.gfxPanel.Controls.Add(textlabel);
+            this.textlabel.AutoSize = true;
+            this.textlabel.Text = this.naam;
+            this.rect.Width = this.textlabel.Width + 10;
+            this.textlabel.Location = new Point(this.rect.Location.X + 5, this.rect.Location.Y + this.textlabel.Height);
+            GFX.DrawEllipse(this.tempPen, this.rect);
             GFX.Dispose();
         }
         
         public void reDraw()
         {
+            rect.Width = textlabel.Width + 10;
+            textlabel.Location = new Point(rect.Location.X + 5, rect.Location.Y + textlabel.Height);
             Graphics GFX = gfxPanel.CreateGraphics();
             GFX.DrawEllipse(tempPen, rect);
             GFX.Dispose();

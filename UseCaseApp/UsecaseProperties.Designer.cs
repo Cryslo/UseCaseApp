@@ -42,6 +42,7 @@
             this.ucfBescrijvingTxt = new System.Windows.Forms.TextBox();
             this.ucfUitzonderingTxt = new System.Windows.Forms.TextBox();
             this.ucfResultaatTxt = new System.Windows.Forms.TextBox();
+            this.updateUsecase = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -158,12 +159,23 @@
             this.ucfResultaatTxt.Size = new System.Drawing.Size(380, 20);
             this.ucfResultaatTxt.TabIndex = 13;
             // 
+            // updateUsecase
+            // 
+            this.updateUsecase.Location = new System.Drawing.Point(338, 431);
+            this.updateUsecase.Name = "updateUsecase";
+            this.updateUsecase.Size = new System.Drawing.Size(148, 35);
+            this.updateUsecase.TabIndex = 14;
+            this.updateUsecase.Text = "Update Usecase";
+            this.updateUsecase.UseVisualStyleBackColor = true;
+            this.updateUsecase.Click += new System.EventHandler(this.updateUsecase_Click);
+            // 
             // UsecaseProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 452);
+            this.ClientSize = new System.Drawing.Size(498, 478);
             this.ControlBox = false;
+            this.Controls.Add(this.updateUsecase);
             this.Controls.Add(this.ucfResultaatTxt);
             this.Controls.Add(this.ucfUitzonderingTxt);
             this.Controls.Add(this.ucfBescrijvingTxt);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.TextBox ucfBescrijvingTxt;
         private System.Windows.Forms.TextBox ucfUitzonderingTxt;
         private System.Windows.Forms.TextBox ucfResultaatTxt;
+        private System.Windows.Forms.Button updateUsecase;
     }
 }

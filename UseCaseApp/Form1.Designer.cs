@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ActorRadioButton = new System.Windows.Forms.RadioButton();
             this.UsecaseRadioButton = new System.Windows.Forms.RadioButton();
             this.LineRadioButton = new System.Windows.Forms.RadioButton();
@@ -44,6 +43,7 @@
             this.selectRB = new System.Windows.Forms.RadioButton();
             this.editRB = new System.Windows.Forms.RadioButton();
             this.clearCanvas = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.gfxPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -51,13 +51,6 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(521, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // ActorRadioButton
             // 
@@ -196,7 +189,7 @@
             this.groupBox2.Size = new System.Drawing.Size(126, 100);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Tools";
             // 
             // selectRB
             // 
@@ -232,16 +225,26 @@
             this.clearCanvas.UseVisualStyleBackColor = true;
             this.clearCanvas.Click += new System.EventHandler(this.clearCanvas_Click);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(856, 41);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 9;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 509);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.clearCanvas);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gfxPanel);
-            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.gfxPanel.ResumeLayout(false);
@@ -254,13 +257,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RadioButton ActorRadioButton;
         private System.Windows.Forms.RadioButton UsecaseRadioButton;
         private System.Windows.Forms.RadioButton LineRadioButton;
@@ -276,6 +276,7 @@
         private System.Windows.Forms.RadioButton selectRB;
         private System.Windows.Forms.RadioButton editRB;
         private System.Windows.Forms.Button clearCanvas;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }
 
